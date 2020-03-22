@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+</head>
+<body>
+    
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+<div id="app">
+    <h1>Hello Vue!</h1>
+    <p>{{message | uppercase}}</p>
+
+    <button v-on:click="addExclamation">Add !</button>
+    <button type="reset" v-on:click="clear">clear</button>
+    </div>
+
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                message: "hi!",
+                point: 0
+                
+            },
+            methods: {
+                addExclamation: function(event) {
+                    this.message += '!'
+                    
+                },
+                clear: function(){
+                    this.message = 'hi'
+                    this.point = 0
+                }
+            },
+
+filters: {
+
+    uppercase: function(string) {
+
+        return string.toUpperCase()
+
+    }
+            }
+        })
+
+    </script>
+
+</body>
+</html>
